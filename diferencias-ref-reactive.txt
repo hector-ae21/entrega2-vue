@@ -1,0 +1,15 @@
+**Diferencias entre `ref` y `reactive` en Vue 3**
+
+1. **`ref`**:
+   - Se utiliza para hacer tipos de datos primitivos reactivos, como cadenas, números y booleanos.
+   - Envuelve los datos en un objeto con una propiedad `.value` para acceder o modificarlo.
+   - Adecuado para valores individuales cuando se necesita preservar la reactividad incluso cuando la variable se pasa.
+
+2. **`reactive`**:
+   - Se utiliza para hacer objetos y matrices reactivos.
+   - No envuelve los datos con una propiedad `.value`; la estructura de datos original se hace reactiva.
+   - Adecuado para estructuras complejas donde se necesita mantener la reactividad a través de propiedades anidadas.
+
+**Diferencias**:
+   - `ref` se usa generalmente para primitivos y necesita `.value` para acceder al valor reactivo, mientras que `reactive` se usa para objetos y matrices y accede a las propiedades directamente.
+   - Al desestructurar o extender objetos `reactive`, la reactividad se mantiene. Sin embargo, la desestructuración de un `ref` perderá su reactividad a menos que se use `.value` o se apliquen funciones de composición de reactividad específicas.

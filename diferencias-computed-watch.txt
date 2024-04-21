@@ -1,0 +1,15 @@
+**Diferencias entre `computed` y `watch` en Vue 3**
+
+1. **`computed`**:
+   - Crea una propiedad calculada que se recalcula automáticamente cuando cambian sus dependencias reactivas.
+   - Principalmente utilizado para derivar nuevos datos a partir del estado reactivo existente.
+   - Es perezoso por naturaleza; los cálculos solo se ejecutan cuando se necesitan sus resultados.
+
+2. **`watch`**:
+   - Establece un efecto secundario que se ejecuta cuando cambian las fuentes reactivas especificadas.
+   - Útil para realizar acciones en respuesta a cambios de estado, como obtener datos, registrar o manipulaciones complejas.
+   - Ofrece un control más granular, incluyendo opciones de observación profunda e invocación inmediata.
+
+**Diferencias**:
+   - `computed` es una dependencia reactiva solo de getter, adecuada para actualizaciones automáticas basadas en otros estados reactivos. `watch` es más como un oyente de eventos para cambios reactivos, permitiendo ejecutar efectos secundarios.
+   - `computed` debe usarse cuando se necesita un valor que depende de otros valores reactivos, y `watch` es mejor cuando se necesita reaccionar a cambios en datos reactivos realizando efectos secundarios.
